@@ -1,0 +1,81 @@
+2025-12-04T19:41:52,272+0000 [main] INFO  org.apache.pulsar.testclient.PerformanceProducer - JVM args [-Djava.net.preferIPv4Stack=true, -Dorg.xerial.snappy.use.systemlib=true, -Dlog4j.configurationFile=log4j2.yaml, -Dio.netty.tryReflectionSetAccessible=true, -Dorg.apache.pulsar.shade.io.netty.tryReflectionSetAccessible=true, --add-opens=java.base/sun.net=ALL-UNNAMED, --add-opens=java.base/java.lang=ALL-UNNAMED, --add-opens=java.base/java.util.zip=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED, -Dpulsar.allocator.exit_on_oom=true, -Dio.netty.recycler.maxCapacityPerThread=4096, -Dpulsar.log.appender=Console, -Dpulsar.log.immediateFlush=false, -Dpulsar.log.dir=/pulsar/logs, -Dpulsar.log.file=pulsar-perftest.log]
+2025-12-04T19:41:52,373+0000 [main] INFO  org.apache.pulsar.testclient.PerformanceProducer - Netty max memory (PlatformDependent.maxDirectMemory()) 29 GB
+2025-12-04T19:41:52,374+0000 [main] INFO  org.apache.pulsar.testclient.PerformanceProducer - JVM max heap memory (Runtime.getRuntime().maxMemory()) 29 GB
+2025-12-04T19:41:52,443+0000 [main] INFO  org.apache.pulsar.testclient.PerformanceProducer - Starting Pulsar perf producer with config: {
+  "serviceURL" : "pulsar://my-pulsar-proxy:6650/",
+  "authPluginClassName" : "",
+  "authParams" : "",
+  "sslfactoryPlugin" : null,
+  "sslFactoryPluginParams" : null,
+  "tlsTrustCertsFilePath" : "",
+  "tlsAllowInsecureConnection" : false,
+  "tlsHostnameVerificationEnable" : false,
+  "maxConnections" : 1,
+  "statsIntervalSeconds" : 0,
+  "ioThreads" : 1,
+  "enableBusyWait" : false,
+  "listenerName" : null,
+  "listenerThreads" : 1,
+  "maxLookupRequest" : 50000,
+  "deprecatedAuthPluginClassName" : null,
+  "memoryLimit" : 0,
+  "topics" : [ "persistent://public/default/sync-topic" ],
+  "numTopics" : 1,
+  "numTestThreads" : 1,
+  "msgRate" : 10000,
+  "msgSize" : 1024,
+  "numProducers" : 1,
+  "separator" : "-",
+  "sendTimeout" : 0,
+  "producerName" : null,
+  "adminURL" : "http://my-pulsar-proxy:80/",
+  "maxOutstanding" : 0,
+  "maxPendingMessagesAcrossPartitions" : 0,
+  "partitions" : null,
+  "numMessages" : 0,
+  "compression" : "NONE",
+  "payloadFilename" : null,
+  "payloadDelimiter" : "\\n",
+  "batchTimeMillis" : 1.0,
+  "disableBatching" : false,
+  "batchMaxMessages" : 1000,
+  "batchMaxBytes" : 4194304,
+  "testTime" : 60,
+  "warmupTimeSeconds" : 1.0,
+  "encKeyName" : null,
+  "encKeyFile" : null,
+  "delay" : 0,
+  "delayRange" : null,
+  "setEventTime" : false,
+  "exitOnFailure" : false,
+  "messageKeyGenerationMode" : null,
+  "producerAccessMode" : "Shared",
+  "formatPayload" : false,
+  "formatterClass" : "org.apache.pulsar.testclient.DefaultMessageFormatter",
+  "transactionTimeout" : 10,
+  "numMessagesPerTransaction" : 50,
+  "isEnableTransaction" : false,
+  "isAbortTransaction" : false,
+  "histogramFile" : null
+}
+2025-12-04T19:41:52,451+0000 [pulsar-perf-producer-exec-1-1] INFO  org.apache.pulsar.testclient.PerformanceProducer - Started performance test thread 0
+2025-12-04T19:41:53,099+0000 [pulsar-perf-producer-exec-1-1] INFO  org.apache.pulsar.testclient.PerformanceProducer - Adding 1 publishers on topic persistent://public/default/sync-topic
+2025-12-04T19:41:53,312+0000 [pulsar-client-io-2-1] INFO  org.apache.pulsar.client.impl.ConnectionPool - [[id: 0xde93daae, L:/10.233.127.13:50782 - R:my-pulsar-proxy.stu245087-default.svc.cluster.local/10.233.20.236:6650]] Connected to server
+2025-12-04T19:41:54,852+0000 [pulsar-client-io-2-1] INFO  org.apache.pulsar.client.impl.ConnectionPool - [[id: 0xbb56ac56, L:/10.233.127.13:50808 - R:my-pulsar-proxy.stu245087-default.svc.cluster.local/10.233.20.236:6650]] Connected to server
+2025-12-04T19:41:54,853+0000 [pulsar-client-io-2-1] INFO  org.apache.pulsar.client.impl.ClientCnx - [id: 0xbb56ac56, L:/10.233.127.13:50808 - R:my-pulsar-proxy.stu245087-default.svc.cluster.local/10.233.20.236:6650] Connected through proxy to target broker at my-pulsar-broker-1.my-pulsar-broker.stu245087-default.svc.cluster.local:6650
+2025-12-04T19:41:54,868+0000 [pulsar-client-io-2-1] INFO  org.apache.pulsar.client.impl.ProducerImpl - [persistent://public/default/sync-topic] [null] Creating producer on cnx [id: 0xbb56ac56, L:/10.233.127.13:50808 - R:my-pulsar-proxy.stu245087-default.svc.cluster.local/10.233.20.236:6650]
+2025-12-04T19:41:56,384+0000 [pulsar-client-io-2-1] INFO  org.apache.pulsar.client.impl.ProducerImpl - [persistent://public/default/sync-topic] [my-pulsar-19-0] Created producer on cnx [id: 0xbb56ac56, L:/10.233.127.13:50808 - R:my-pulsar-proxy.stu245087-default.svc.cluster.local/10.233.20.236:6650]
+2025-12-04T19:41:56,390+0000 [pulsar-perf-producer-exec-1-1] INFO  org.apache.pulsar.testclient.PerformanceProducer - Created 1 producers
+2025-12-04T19:42:02,616+0000 [main] INFO  org.apache.pulsar.testclient.PerformanceProducer - Throughput produced:   58023 msg ---   5802.1 msg/s ---     45.3 Mbit/s  --- failure      0.0 msg/s --- Latency: mean: 225.401 ms - med: 214.462 - 95pct: 539.231 - 99pct: 725.095 - 99.9pct: 766.983 - 99.99pct: 771.111 - Max: 771.563
+2025-12-04T19:42:12,666+0000 [main] INFO  org.apache.pulsar.testclient.PerformanceProducer - Throughput produced:  161110 msg ---  10126.3 msg/s ---     79.1 Mbit/s  --- failure      0.0 msg/s --- Latency: mean: 144.513 ms - med:  40.328 - 95pct: 463.381 - 99pct: 620.891 - 99.9pct: 711.863 - 99.99pct: 721.031 - Max: 721.995
+2025-12-04T19:42:22,700+0000 [main] INFO  org.apache.pulsar.testclient.PerformanceProducer - Throughput produced:  262638 msg ---  10108.9 msg/s ---     79.0 Mbit/s  --- failure      0.0 msg/s --- Latency: mean: 130.319 ms - med:  26.887 - 95pct: 648.255 - 99pct: 813.355 - 99.9pct: 902.175 - 99.99pct: 911.243 - Max: 912.175
+2025-12-04T19:42:32,733+0000 [main] INFO  org.apache.pulsar.testclient.PerformanceProducer - Throughput produced:  363002 msg ---  10002.3 msg/s ---     78.1 Mbit/s  --- failure      0.0 msg/s --- Latency: mean: 120.051 ms - med:  28.642 - 95pct: 401.093 - 99pct: 510.701 - 99.9pct: 557.271 - 99.99pct: 566.151 - Max: 567.139
+2025-12-04T19:42:42,765+0000 [main] INFO  org.apache.pulsar.testclient.PerformanceProducer - Throughput produced:  463300 msg ---   9995.6 msg/s ---     78.1 Mbit/s  --- failure      0.0 msg/s --- Latency: mean:  38.692 ms - med:  20.051 - 95pct: 174.148 - 99pct: 300.521 - 99.9pct: 334.275 - 99.99pct: 338.655 - Max: 339.579
+2025-12-04T19:42:52,798+0000 [main] INFO  org.apache.pulsar.testclient.PerformanceProducer - Throughput produced:  563321 msg ---   9969.0 msg/s ---     77.9 Mbit/s  --- failure      0.0 msg/s --- Latency: mean:  80.390 ms - med:  23.523 - 95pct: 384.719 - 99pct: 503.863 - 99.9pct: 592.371 - 99.99pct: 601.287 - Max: 602.267
+2025-12-04T19:42:56,393+0000 [pulsar-perf-producer-exec-1-1] INFO  org.apache.pulsar.testclient.PerformanceProducer - ------------- DONE (reached the maximum duration: [60 seconds] of production) --------------
+2025-12-04T19:42:56,394+0000 [pulsar-perf-producer-exec-1-1] INFO  org.apache.pulsar.client.impl.PulsarClientImpl - Client closing. URL: pulsar://my-pulsar-proxy:6650/
+2025-12-04T19:42:56,419+0000 [pulsar-client-io-2-1] INFO  org.apache.pulsar.client.impl.ProducerImpl - [persistent://public/default/sync-topic] [my-pulsar-19-0] Closed Producer
+2025-12-04T19:42:56,438+0000 [pulsar-client-io-2-1] INFO  org.apache.pulsar.client.impl.ClientCnx - [id: 0xde93daae, L:/10.233.127.13:50782 ! R:my-pulsar-proxy.stu245087-default.svc.cluster.local/10.233.20.236:6650] Disconnected
+2025-12-04T19:42:56,450+0000 [pulsar-client-io-2-1] INFO  org.apache.pulsar.client.impl.ClientCnx - [id: 0xbb56ac56, L:/10.233.127.13:50808 ! R:my-pulsar-proxy.stu245087-default.svc.cluster.local/10.233.20.236:6650] Disconnected
+2025-12-04T19:43:02,808+0000 [perf-client-shutdown] INFO  org.apache.pulsar.testclient.PerformanceProducer - Aggregated throughput stats --- 600009 records sent --- 8527.269 msg/s --- 66.619 Mbit/s 
+2025-12-04T19:43:02,846+0000 [perf-client-shutdown] INFO  org.apache.pulsar.testclient.PerformanceProducer - Aggregated latency stats --- Latency: mean: 117.217 ms - med:  27.067 - 95pct: 456.997 - 99pct: 669.335 - 99.9pct: 855.339 - 99.99pct: 906.423 - 99.999pct: 911.635 - Max: 912.175

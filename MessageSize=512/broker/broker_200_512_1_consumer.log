@@ -1,0 +1,60 @@
+2025-12-05T10:02:41,632+0000 [main] INFO  org.apache.pulsar.testclient.PerformanceConsumer - JVM args [-Djava.net.preferIPv4Stack=true, -Dorg.xerial.snappy.use.systemlib=true, -Dlog4j.configurationFile=log4j2.yaml, -Dio.netty.tryReflectionSetAccessible=true, -Dorg.apache.pulsar.shade.io.netty.tryReflectionSetAccessible=true, --add-opens=java.base/sun.net=ALL-UNNAMED, --add-opens=java.base/java.lang=ALL-UNNAMED, --add-opens=java.base/java.util.zip=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED, -Dpulsar.allocator.exit_on_oom=true, -Dio.netty.recycler.maxCapacityPerThread=4096, -Dpulsar.log.appender=Console, -Dpulsar.log.immediateFlush=false, -Dpulsar.log.dir=/pulsar/logs, -Dpulsar.log.file=pulsar-perftest.log]
+2025-12-05T10:02:41,732+0000 [main] INFO  org.apache.pulsar.testclient.PerformanceConsumer - Netty max memory (PlatformDependent.maxDirectMemory()) 29 GB
+2025-12-05T10:02:41,733+0000 [main] INFO  org.apache.pulsar.testclient.PerformanceConsumer - JVM max heap memory (Runtime.getRuntime().maxMemory()) 29 GB
+2025-12-05T10:02:41,772+0000 [main] INFO  org.apache.pulsar.testclient.PerformanceConsumer - Starting Pulsar performance consumer with config: {
+  "serviceURL" : "pulsar://my-pulsar-proxy:6650/",
+  "authPluginClassName" : "",
+  "authParams" : "",
+  "sslfactoryPlugin" : null,
+  "sslFactoryPluginParams" : null,
+  "tlsTrustCertsFilePath" : "",
+  "tlsAllowInsecureConnection" : false,
+  "tlsHostnameVerificationEnable" : false,
+  "maxConnections" : 1,
+  "statsIntervalSeconds" : 0,
+  "ioThreads" : 1,
+  "enableBusyWait" : false,
+  "listenerName" : null,
+  "listenerThreads" : 1,
+  "maxLookupRequest" : 50000,
+  "deprecatedAuthPluginClassName" : null,
+  "memoryLimit" : 0,
+  "topics" : [ "persistent://public/default/sync-topic" ],
+  "numTopics" : 1,
+  "numConsumers" : 1,
+  "numSubscriptions" : 1,
+  "subscriberName" : null,
+  "subscriptions" : [ "sub" ],
+  "subscriptionType" : "Shared",
+  "rate" : 0.0,
+  "receiverQueueSize" : 1000,
+  "maxTotalReceiverQueueSizeAcrossPartitions" : 50000,
+  "autoScaledReceiverQueueSize" : false,
+  "replicatedSubscription" : false,
+  "acknowledgmentsGroupingDelayMillis" : 100,
+  "numMessages" : 0,
+  "encKeyFile" : null,
+  "testTime" : 60,
+  "batchIndexAck" : false,
+  "transactionTimeout" : 10,
+  "numMessagesPerTransaction" : 50,
+  "isEnableTransaction" : false,
+  "totalNumTxn" : 0,
+  "isAbortTransaction" : false,
+  "histogramFile" : null
+}
+2025-12-05T10:02:42,502+0000 [main] INFO  org.apache.pulsar.testclient.PerformanceConsumer - Adding 1 consumers per subscription on topic persistent://public/default/sync-topic
+2025-12-05T10:02:42,701+0000 [pulsar-client-io-1-1] INFO  org.apache.pulsar.client.impl.ConnectionPool - [[id: 0xf1d1353b, L:/10.233.127.13:37796 - R:my-pulsar-proxy.stu245087-default.svc.cluster.local/10.233.20.236:6650]] Connected to server
+2025-12-05T10:02:43,296+0000 [pulsar-client-io-1-1] INFO  org.apache.pulsar.client.impl.ConnectionPool - [[id: 0x0f1d8f94, L:/10.233.127.13:37802 - R:my-pulsar-proxy.stu245087-default.svc.cluster.local/10.233.20.236:6650]] Connected to server
+2025-12-05T10:02:43,296+0000 [pulsar-client-io-1-1] INFO  org.apache.pulsar.client.impl.ClientCnx - [id: 0x0f1d8f94, L:/10.233.127.13:37802 - R:my-pulsar-proxy.stu245087-default.svc.cluster.local/10.233.20.236:6650] Connected through proxy to target broker at my-pulsar-broker-2.my-pulsar-broker.stu245087-default.svc.cluster.local:6650
+2025-12-05T10:02:43,314+0000 [pulsar-client-io-1-1] INFO  org.apache.pulsar.client.impl.ConsumerImpl - [persistent://public/default/sync-topic][sub] Subscribing to topic on cnx [id: 0x0f1d8f94, L:/10.233.127.13:37802 - R:my-pulsar-proxy.stu245087-default.svc.cluster.local/10.233.20.236:6650], consumerId 0
+2025-12-05T10:02:44,868+0000 [pulsar-client-io-1-1] INFO  org.apache.pulsar.client.impl.ConsumerImpl - [persistent://public/default/sync-topic][sub] Subscribed to topic on my-pulsar-proxy.stu245087-default.svc.cluster.local/10.233.20.236:6650 -- consumer: 0
+2025-12-05T10:02:44,869+0000 [main] INFO  org.apache.pulsar.testclient.PerformanceConsumer - Start receiving from 1 consumers per subscription on 1 topics
+2025-12-05T10:02:54,951+0000 [main] INFO  org.apache.pulsar.testclient.PerformanceConsumer - Throughput received:   88136 msg --- 8833.788  msg/s --- 34.508 Mbit/s  --- Latency: mean: 178123.241 ms - med: 1011 - 95pct: 538643 - 99pct: 538779 - 99.9pct: 538799 - 99.99pct: 538799 - Max: 538799
+2025-12-05T10:03:04,971+0000 [main] INFO  org.apache.pulsar.testclient.PerformanceConsumer - Throughput received:  229964 msg --- 14034.623  msg/s --- 54.822 Mbit/s  --- Latency: mean: 977.623 ms - med: 28 - 95pct: 4157 - 99pct: 4638 - 99.9pct: 4740 - 99.99pct: 4748 - Max: 4749
+2025-12-05T10:03:14,983+0000 [main] INFO  org.apache.pulsar.testclient.PerformanceConsumer - Throughput received:  330079 msg --- 9995.628  msg/s --- 39.045 Mbit/s  --- Latency: mean: 43.414 ms - med: 22 - 95pct: 210 - 99pct: 536 - 99.9pct: 606 - 99.99pct: 613 - Max: 614
+2025-12-05T10:03:24,995+0000 [main] INFO  org.apache.pulsar.testclient.PerformanceConsumer - Throughput received:  430215 msg --- 10002.189  msg/s --- 39.071 Mbit/s  --- Latency: mean: 41.015 ms - med: 23 - 95pct: 157 - 99pct: 466 - 99.9pct: 529 - 99.99pct: 538 - Max: 538
+2025-12-05T10:03:35,009+0000 [main] INFO  org.apache.pulsar.testclient.PerformanceConsumer - Throughput received:  530382 msg --- 10003.952  msg/s --- 39.078 Mbit/s  --- Latency: mean: 23.114 ms - med: 21 - 95pct: 34 - 99pct: 119 - 99.9pct: 186 - 99.99pct: 194 - Max: 195
+2025-12-05T10:03:41,779+0000 [pulsar-external-listener-4-1] INFO  org.apache.pulsar.testclient.PerformanceConsumer - ------------------- DONE -----------------------
+2025-12-05T10:03:41,782+0000 [perf-client-shutdown] INFO  org.apache.pulsar.testclient.PerformanceConsumer - Aggregated throughput stats --- 598033 records received --- 10507.826 msg/s --- 41.046 Mbit/s --- AckRate: 10507.825593184176  msg/s --- ack failed 0 msg
+2025-12-05T10:03:41,808+0000 [perf-client-shutdown] INFO  org.apache.pulsar.testclient.PerformanceConsumer - Aggregated latency stats --- Latency: mean: 26592.099 ms - med: 24 - 95pct: 4701 - 99pct: 538535 - 99.9pct: 538787 - 99.99pct: 538799 - 99.999pct: 538799 - Max: 538799
